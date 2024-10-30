@@ -6,7 +6,7 @@
 /*   By: aahaded <aahaded@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:02:54 by aahaded           #+#    #+#             */
-/*   Updated: 2024/10/30 10:57:31 by aahaded          ###   ########.fr       */
+/*   Updated: 2024/10/30 19:09:13 by aahaded          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -54,12 +54,4 @@ char	*ft_itoa(int n)
 		len_num--;
 	}
 	return (res);
-}
-
-int main()
-{
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(-1));
-	printf("%s\n", ft_itoa(-623));
-	printf("%s\n", ft_itoa(-111));
 }
