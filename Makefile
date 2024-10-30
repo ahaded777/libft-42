@@ -6,6 +6,7 @@ SRC =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 	ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c \
 	ft_strnstr.c ft_atoi.c ft_strdup.c ft_substr.c ft_strjoin.c \
 	ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
+	ft_memmove.c ft_memchr.c ft_memcmp.c ft_calloc.c ft_strtrim.c \
 
 OBJS = $(SRC:.c=.o)
 
@@ -18,13 +19,15 @@ $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 
 clean: 
-	rm *.o
+	rm -rf $(OBJS)
 
 fclean: clean
-	rm $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
 test: $(NAME)
-	$(CC) $(FLAGS) test.c -L. -lft -o test_libft	
+	$(CC) $(FLAGS) test.c -L. -lft -o test_libft
 	./test_libft
+
+.PHONY: all clean fclean re

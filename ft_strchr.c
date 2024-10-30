@@ -6,7 +6,7 @@
 /*   By: aahaded <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:14:22 by aahaded           #+#    #+#             */
-/*   Updated: 2024/10/23 11:33:54 by aahaded          ###   ########.fr       */
+/*   Updated: 2024/10/29 18:53:15 by aahaded          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,5 +22,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s + i);
 		i++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s + i);
 	return (0);
 }

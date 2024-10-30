@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aahaded <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: aahaded <aahaded@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:47:45 by aahaded           #+#    #+#             */
-/*   Updated: 2024/10/26 21:31:09 by aahaded          ###   ########.fr       */
+/*   Updated: 2024/10/29 11:03:28 by aahaded          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int		i;
-	int	str_len;
-	char	*res;
+	unsigned int	i;
+	int				str_len;
+	char			*res;
 
 	if (!s || !f)
 		return (NULL);
