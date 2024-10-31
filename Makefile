@@ -14,16 +14,20 @@ OBJS = $(SRC:.c=.o)
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
+RM = rm
+RM_FLAGS = -rf
+H_LIBFT = libft.h
+
 all:	$(NAME)
 
-$(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+$(NAME): $(H_LIBFT) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 clean: 
-	rm -rf $(OBJS)
+	$(RM) $(RM_FLAGS) $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	$(RM) $(RM_FLAGS) $(NAME)
 
 re: fclean all
 
