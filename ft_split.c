@@ -6,13 +6,18 @@
 /*   By: aahaded <aahaded@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:35:13 by aahaded           #+#    #+#             */
-/*   Updated: 2024/10/29 10:35:26 by aahaded          ###   ########.fr       */
+/*   Updated: 2024/11/01 11:10:33 by aahaded          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+char	**free_prev(char **res, int i)
+{
+	while (i--)
+		free(res[i]);
+	free(res);
+	return (NULL);
+}
 
 int	count_word(const char *str, char c)
 {
@@ -37,9 +42,9 @@ char	**ft_util(char **res, const char *s, char c, int c_word)
 	int	e;
 	int	len;
 
-	i = -1;
+	i = 0;
 	j = 0;
-	while (++i < c_word)
+	while (i < c_word)
 	{
 		while (s[j] && s[j] == c)
 			j++;
@@ -49,9 +54,10 @@ char	**ft_util(char **res, const char *s, char c, int c_word)
 		len = j - e;
 		res[i] = malloc(len + 1);
 		if (!res[i])
-			return (NULL);
-		memcpy(res[i], s + e, len);
+			return (free_prev(res, i));
+		ft_memcpy(res[i], s + e, len);
 		res[i][len] = '\0';
+		i++;
 	}
 	res[i] = NULL;
 	return (res);
