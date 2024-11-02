@@ -6,7 +6,7 @@
 /*   By: aahaded <aahaded@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:06:24 by aahaded           #+#    #+#             */
-/*   Updated: 2024/11/01 15:05:57 by aahaded          ###   ########.fr       */
+/*   Updated: 2024/11/02 12:41:01 by aahaded          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -63,7 +64,8 @@ typedef struct s_list
 
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void*));
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
