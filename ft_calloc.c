@@ -15,8 +15,16 @@ void	*ft_calloc(size_t num, size_t size)
 {
 	void	*ptr;
 
+	if (num > SIZE_MAX || size > SIZE_MAX)
+        	return (NULL);
+	if (size && num > SIZE_MAX / size)
+		return (NULL);
 	ptr = malloc(num * size);
 	if (ptr == NULL)
+	{
+		free(ptr);
 		return (NULL);
-	return (ft_bzero(ptr, size * num));
+	}
+	ft_bzero(ptr, size * num);
+	return (ptr);
 }
