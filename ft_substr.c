@@ -6,7 +6,7 @@
 /*   By: aahaded <aahaded@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 20:41:57 by aahaded           #+#    #+#             */
-/*   Updated: 2024/10/30 10:05:02 by aahaded          ###   ########.fr       */
+/*   Updated: 2024/11/04 11:41:01 by aahaded          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,7 +14,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	int		s_len;
+	size_t	s_len;
 	char	*res;
 
 	i = 0;

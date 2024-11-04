@@ -16,8 +16,8 @@ SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c  ft
 OBJS = $(SRC:.c=.o)
 OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
-CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 AR = ar -rcs
@@ -25,7 +25,7 @@ H_LIBFT = libft.h
 
 all:	$(NAME)
 
-$(NAME):	$(H_LIBFT) $(OBJS)
+$(NAME):  $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 bonus:	$(OBJS_BONUS)
@@ -38,9 +38,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-test: $(NAME)
-	$(CC) $(FLAGS) test.c -L. -lft -o test_libft
-	./test_libft
 
 .PHONY: all clean fclean re

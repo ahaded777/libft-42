@@ -6,7 +6,7 @@
 /*   By: aahaded <aahaded@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:29:49 by aahaded           #+#    #+#             */
-/*   Updated: 2024/11/03 15:53:16 by aahaded          ###   ########.fr       */
+/*   Updated: 2024/11/04 11:35:22 by aahaded          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ int	ft_atoi(const char *str)
 {
 	int					i;
 	int					s;
-	unsigned long long	r;
+	int					r;
 
 	i = 0;
 	s = 1;
@@ -31,10 +31,6 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(str[i]))
 	{
 		r = (r * 10) + (str[i] - 48);
-		if (s == 1 && r > -9223372036854775807)
-			return (-1);
-		if (s == -1 && r > 9223372036854775807)
-			return (0);
 		i++;
 	}
 	return (s * r);
