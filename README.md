@@ -72,7 +72,3 @@ The bonus functions of libft deal with list manipulation. This part is worth an 
 - ft_lstclear
 - ft_lstiter
 - ft_lstmap
-
-
----
-Made by mcombeau: mcombeau@student.42.fr | LinkedIn: [mcombeau](https://www.linkedin.com/in/mia-combeau-86653420b/) | Website: [codequoi.com](https://www.codequoi.com)
